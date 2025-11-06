@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examen formulario</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #067d8b, #378cc5);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .exam-container {
+      background: #fff;
+      padding: 25px 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 500px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question p {
+      font-weight: bold;
+      color: #222;
+    }
+
+    .question label {
+      display: block;
+      margin: 5px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #2193b0;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #176582;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    #resultado.aprobado {
+      color: green;
+    }
+
+    #resultado.reprobado {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div class="exam-container">
+  <h2>Examen 2º Parcial - Programación</h2>
+  <h3 id="bienvenida"></h3>
+
+  <form id="examenForm">
+
+    <div class="question">
+      <p>1. ¿Qué es un lenguaje de programación?</p>
+      <label><input type="radio" name="q1" value="a"> Un programa que ejecuta juegos</label>
+      <label><input type="radio" name="q1" value="b"> Un conjunto de instrucciones que permiten comunicarse con una computadora</label>
+      <label><input type="radio" name="q1" value="c"> Un sistema operativo</label>
+    </div>
+
+    <div class="question">
+      <p>2. ¿Qué significa HTML?</p>
+      <label><input type="radio" name="q2" value="a"> HyperText Markup Language</label>
+      <label><input type="radio" name="q2" value="b"> HighText Machine Language</label>
+      <label><input type="radio" name="q2" value="c"> Hyper Tool Markup Logic</label>
+    </div>
+
+    <div class="question">
+      <p>3. ¿Qué hace la etiqueta &lt;script&gt; en HTML?</p>
+      <label><input type="radio" name="q3" value="a"> Define hojas de estilo</label>
+      <label><input type="radio" name="q3" value="b"> Inserta código JavaScript en una página</label>
+      <label><input type="radio" name="q3" value="c"> Crea un hipervínculo</label>
+    </div>
+
+    <div class="question">
+      <p>4. ¿Qué es una variable?</p>
+      <label><input type="radio" name="q4" value="a"> Una etiqueta para estilos</label>
+      <label><input type="radio" name="q4" value="b"> Un contenedor que almacena un valor que puede cambiar</label>
+      <label><input type="radio" name="q4" value="c"> Un número fijo en el código</label>
+    </div>
+
+    <div class="question">
+      <p>5. ¿Qué lenguaje se usa principalmente para dar estilo a las páginas web?</p>
+      <label><input type="radio" name="q5" value="a"> HTML</label>
+      <label><input type="radio" name="q5" value="b"> CSS</label>
+      <label><input type="radio" name="q5" value="c"> PHP</label>
+    </div>
+
+    <div class="question">
+      <p>6. ¿Qué es un bucle (loop) en programación?</p>
+      <label><input type="radio" name="q6" value="a"> Una estructura que repite un bloque de código mientras se cumpla una condición</label>
+      <label><input type="radio" name="q6" value="b"> Un tipo de variable</label>
+      <label><input type="radio" name="q6" value="c"> Un error de compilación</label>
+    </div>
+
+    <div class="question">
+      <p>7. ¿Cuál de los siguientes es un lenguaje de programación interpretado?</p>
+      <label><input type="radio" name="q7" value="a"> C++</label>
+      <label><input type="radio" name="q7" value="b"> Java</label>
+      <label><input type="radio" name="q7" value="c"> Python</label>
+    </div>
+
+    <div class="question">
+      <p>8. ¿Qué significa “debuggear” un programa?</p>
+      <label><input type="radio" name="q8" value="a"> Traducir el código</label>
+      <label><input type="radio" name="q8" value="b"> Ejecutar el programa en otro idioma</label>
+      <label><input type="radio" name="q8" value="c"> Buscar y corregir errores en el código</label>
+    </div>
+
+    <div class="question">
+      <p>9. ¿Qué tipo de estructura es un “if” en programación?</p>
+      <label><input type="radio" name="q9" value="a"> Una condición</label>
+      <label><input type="radio" name="q9" value="b"> Un bucle</label>
+      <label><input type="radio" name="q9" value="c"> Una función</label>
+    </div>
+
+    <div class="question">
+      <p>10. ¿Qué es una función en programación?</p>
+      <label><input type="radio" name="q10" value="a"> Un bloque de código reutilizable que realiza una tarea específica</label>
+      <label><input type="radio" name="q10" value="b"> Una variable global</label>
+      <label><input type="radio" name="q10" value="c"> Un tipo de bucle</label>
+    </div>
+
+    <button type="submit">Enviar Respuestas</button>
+  </form>
+
+  <div id="resultado"></div>
+</div>
+
+
+  <script>
+    // Mostrar mensaje de bienvenida
+    const usuario = localStorage.getItem("usuarioActivo");
+    const bienvenida = document.getElementById("bienvenida");
+
+    if (usuario) {
+        bienvenida.innerText = `¡Bienvenido, ${usuario}! `;
+    } else {
+  // Si entra sin login, lo regresamos al login
+     alert("Debes iniciar sesión primero.");
+    window.location.href = "login.html";
+    }
+
+    document.getElementById("examenForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const respuestasCorrectas = {
+        q1: "b",
+        q2: "a",
+        q3: "b",
+        q4: "b",
+        q5: "b",
+        q6: "a",
+        q7: "c",
+        q8: "c",
+        q9: "a",
+        q10: "a"
+      };
+
+
+      let puntos = 0;
+      let total = 10;
+
+      for (let pregunta in respuestasCorrectas) {
+        const seleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+        if (seleccionada && seleccionada.value === respuestasCorrectas[pregunta]) {
+          puntos++;
+        }
+      }
+
+      const calificacion = (puntos / total) * 10;
+      const resultado = document.getElementById("resultado");
+
+      if (puntos === total) {
+        resultado.innerHTML = `¡Excelente! Sacaste ${calificacion.toFixed(1)} (Todo correcto )`;
+        resultado.className = "aprobado";
+      } else if (calificacion >= 6) {
+        resultado.innerHTML = `Aprobaste con ${calificacion.toFixed(1)} puntos `;
+        resultado.className = "aprobado";
+      } else {
+        resultado.innerHTML = `Reprobaste con ${calificacion.toFixed(1)} puntos `;
+        resultado.className = "reprobado";
+      }
+    });
+  </script>
+</body>
+</html>
